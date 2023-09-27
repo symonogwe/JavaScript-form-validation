@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="form-container">
-      <form>
+      <form novalidate>
         <div class="form-element-container email-container">
           <label for="email">Email:</label>
           <input type="email" name="email" id="email" required minlength="5" />
@@ -15,7 +15,7 @@
         <div class="form-element-container country-container">
           <label for="country">Country:</label>
           <select name="country" id="country">
-            <option value="Kenya" selected>Kenya</option>
+            <option value="Kenya">Kenya</option>
             <option value="Uganda">Uganda</option>
             <option value="Rwanda">Rwanda</option>
             <option value="Somalia">Somalia</option>
@@ -24,7 +24,7 @@
         </div>
         <div class="form-element-container zip-container">
           <label for="zip">ZIP Code:</label>
-          <input type="text" name="zip" id="zip" required minlength="3" />
+          <input type="text" name="zip" id="zip" required minlength="5" />
         </div>
         <div class="form-element-container password-container">
           <label for="password">Password:</label>

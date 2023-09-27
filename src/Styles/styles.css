@@ -65,7 +65,7 @@ input:valid {
   border: 4px solid green;
 }
 
-input:focus:invalid {
+input:invalid {
   border: 4px solid red;
   background-color: pink;
   outline: none;
