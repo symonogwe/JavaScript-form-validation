@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gloock&family=Zilla+Slab&display=swap");
+
+:root {
+  --base-color: #344e41;
+  --sub-base-color: #588157;
+  --sub-color: #a3b18a;
+  --text-color: #dad7cd;
+  --base-p-fs: calc(1rem + 1vw);
+  --base-header-fs: calc(1.1rem + 1.2vw);
+  --app-h2-fs: calc(0.6rem + 0.6vw);
+  --logo-width: max(35px, 30%);
+  --base-header-ff: "Gloock", sans-serif;
+  --base-paragraph-ff: "Nanum Myeongjo", sans-serif;
+  --base-margin: 0.2em 0.6em;
+  --base-padding: 0.4em 0.6em;
+  --box-shadow: 5px 10px 30px black;
+}
