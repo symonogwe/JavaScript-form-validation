@@ -8,11 +8,12 @@
   <body>
     <div class="form-container">
       <form>
-        <div class="email-container">
-          <label for="email">What's your email:</label>
+        <div class="form-element-container email-container">
+          <label for="email">Email:</label>
           <input type="email" name="email" id="email" required minlength="5" />
         </div>
-        <div class="country-container">
+        <div class="form-element-container country-container">
+          <label for="country">Country:</label>
           <select name="country" id="country">
             <option value="Kenya" selected>Kenya</option>
             <option value="Uganda">Uganda</option>
@@ -21,11 +22,11 @@
             <option value="Djibouti">Djibouti</option>
           </select>
         </div>
-        <div class="zip-container">
+        <div class="form-element-container zip-container">
           <label for="zip">ZIP Code:</label>
           <input type="text" name="zip" id="zip" required minlength="3" />
         </div>
-        <div class="password-container">
+        <div class="form-element-container password-container">
           <label for="password">Password:</label>
           <input
             type="password"
@@ -33,14 +34,18 @@
             id="password"
             minlength="8"
             pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+            required
           />
         </div>
-        <div class="confirm-password-container">
+        <div class="form-element-container confirm-password-container">
           <label for="confirm-password">Confirm Password:</label>
           <input
             type="password"
             name="confirm-password"
             id="confirm-password"
+            min="8"
+            pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+            required
           />
         </div>
       </form>
