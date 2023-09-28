@@ -16,7 +16,7 @@ const validateFormObj = {
     ["Uganda", "^U.*256"],
     ["Rwanda", "^R.*250"],
     ["Somalia", "^S.*252"],
-    ["Djibouti", "^D.*252"],
+    ["Djibouti", "^D.*253"],
   ],
   validateZip() {
     const zip = document.getElementById("zip");
@@ -179,6 +179,7 @@ formBtn.addEventListener("click", (e) => {
     form.reportValidity();
   } else {
     alert("Nice work! The form met all constraints!");
+    e.preventDefault();
   }
 
   // document.querySelector("form").reportValidity();
