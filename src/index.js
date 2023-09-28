@@ -12,4 +12,9 @@ window.onload = () => {
     validateFormObj.validatePassword;
   document.getElementById("password").onchange =
     validateFormObj.validatePassword;
+
+  document.getElementById("confirm-password").oninput =
+    validateFormObj.validateConfirmPassword;
+  document.getElementById("confirm-password").onchange =
+    validateFormObj.validateConfirmPassword;
 };

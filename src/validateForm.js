@@ -39,7 +39,14 @@ const validateFormObj = {
       validateFormObj.revealPasswordError();
     }
   },
-  validateConfirmPassword() {},
+  validateConfirmPassword() {
+    const confirmPassword = document.getElementById("confirm-password");
+    confirmPassword.setCustomValidity("");
+
+    if (confirmPassword.checkValidity()) {
+      validateFormObj.isMatchingPassword();
+    }
+  },
 
   // Reveal Element Validator errors
   revealEmailError: () => {
@@ -117,6 +124,15 @@ const validateFormObj = {
         "Your Password needs to include at least one alphabetic character, at least one digit & at least one special character."
       );
       password.reportValidity();
+    }
+  },
+  isMatchingPassword: () => {
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirm-password");
+
+    if (confirmPassword.value !== password.value) {
+      confirmPassword.setCustomValidity("Passwords do not match!");
+      confirmPassword.reportValidity();
     }
   },
 };
