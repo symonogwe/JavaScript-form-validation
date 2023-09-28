@@ -7,6 +7,7 @@ window.onload = () => {
 
   document.getElementById("zip").oninput = validateFormObj.validateZip;
   document.getElementById("zip").onchange = validateFormObj.validateZip;
+  document.getElementById("zip").onfocus = validateFormObj.validateZip;
 
   document.getElementById("password").oninput =
     validateFormObj.validatePassword;
@@ -17,4 +18,7 @@ window.onload = () => {
     validateFormObj.validateConfirmPassword;
   document.getElementById("confirm-password").onchange =
     validateFormObj.validateConfirmPassword;
+
+  document.getElementById("country").onchange = validateFormObj.validateCountry;
+  document.getElementById("country").onfocus = validateFormObj.validateCountry;
 };

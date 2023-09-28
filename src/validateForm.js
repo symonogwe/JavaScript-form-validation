@@ -48,6 +48,16 @@ const validateFormObj = {
     }
   },
 
+  // Country Element validator
+  validateCountry: () => {
+    const country = document.getElementById("country");
+    country.setCustomValidity("");
+
+    if (country.checkValidity()) {
+      validateFormObj.isValidCountry();
+    }
+  },
+
   // Reveal Element Validator errors
   revealEmailError: () => {
     const email = document.getElementById("email");
@@ -126,6 +136,7 @@ const validateFormObj = {
       password.reportValidity();
     }
   },
+
   isMatchingPassword: () => {
     const password = document.getElementById("password");
     const confirmPassword = document.getElementById("confirm-password");
@@ -135,13 +146,42 @@ const validateFormObj = {
       confirmPassword.reportValidity();
     }
   },
+
+  isValidCountry: () => {
+    const country = document.getElementById("country");
+    const zip = document.getElementById("zip");
+    let index;
+
+    validateFormObj.zipCountries.forEach((arr) => {
+      if (arr.includes(country.value))
+        index = validateFormObj.zipCountries.indexOf(arr);
+    });
+
+    const zipRegex = new RegExp(validateFormObj.zipCountries[index][1]);
+    const match = zipRegex.test(zip.value);
+
+    if (match) {
+      country.setCustomValidity("");
+    } else {
+      country.setCustomValidity("Country & zip need to match!");
+      country.reportValidity();
+    }
+  },
 };
 
 // Form Button validators
 const formBtn = document.querySelector(".form-btn");
 formBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  validateFormObj.revealEmailError();
+  const form = document.querySelector("form");
+
+  if (!form.checkValidity()) {
+    e.preventDefault();
+    form.reportValidity();
+  } else {
+    alert("Nice work! The form met all constraints!");
+  }
+
+  // document.querySelector("form").reportValidity();
 });
 
 export default validateFormObj;
