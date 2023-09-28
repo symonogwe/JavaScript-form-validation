@@ -181,8 +181,6 @@ formBtn.addEventListener("click", (e) => {
     alert("Nice work! The form met all constraints!");
     e.preventDefault();
   }
-
-  // document.querySelector("form").reportValidity();
 });
 
 export default validateFormObj;
