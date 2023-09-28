@@ -28,7 +28,17 @@ const validateFormObj = {
       validateFormObj.revealZipError();
     }
   },
-  validatePassword() {},
+  // Password Element validator
+  validatePassword() {
+    const password = document.getElementById("password");
+    password.setCustomValidity("");
+
+    if (password.checkValidity()) {
+      password.setCustomValidity("");
+    } else {
+      validateFormObj.revealPasswordError();
+    }
+  },
   validateConfirmPassword() {},
 
   // Reveal Element Validator errors
@@ -91,6 +101,22 @@ const validateFormObj = {
       zip.reportValidity();
     } else {
       zip.setCustomValidity("");
+    }
+  },
+  revealPasswordError: () => {
+    const password = document.getElementById("password");
+
+    if (password.validity.tooShort) {
+      password.setCustomValidity(
+        "Your password needs to be longer than 8 characters"
+      );
+      password.reportValidity();
+    }
+    if (password.validity.patternMismatch) {
+      password.setCustomValidity(
+        "Your Password needs to include at least one alphabetic character, at least one digit & at least one special character."
+      );
+      password.reportValidity();
     }
   },
 };

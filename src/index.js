@@ -7,4 +7,9 @@ window.onload = () => {
 
   document.getElementById("zip").oninput = validateFormObj.validateZip;
   document.getElementById("zip").onchange = validateFormObj.validateZip;
+
+  document.getElementById("password").oninput =
+    validateFormObj.validatePassword;
+  document.getElementById("password").onchange =
+    validateFormObj.validatePassword;
 };
